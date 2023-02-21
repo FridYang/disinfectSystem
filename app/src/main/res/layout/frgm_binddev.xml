@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/FrameMargin"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ico_hospital"/>
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/binddev_spin_devcate"
+                    android:layout_width="520dp"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="30dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/stroke_edit"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ico_spin"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ico_department"/>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/binddev_spin_devname"
+                    android:layout_width="520dp"
+                    android:layout_height="90dp"
+                    android:layout_marginRight="30dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/stroke_edit"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ico_spin"/>
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/binddev_tv_mac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/uitvcolor"/>
+
+    </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/binddev_img_exit"
+            android:layout_width="@dimen/bottomSize"
+            android:layout_height="@dimen/bottomSize"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/FrameMargin"
+            android:layout_marginTop="@dimen/FrameMargin"
+            android:src="@drawable/ico_home" />
+    </FrameLayout>
+
+
+</LinearLayout>

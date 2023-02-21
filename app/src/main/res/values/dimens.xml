@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!---大屏设置
+    <dimen name="LayoutScale">1</dimen>
+
+    <dimen name="FrameMargin">20dp</dimen>
+    <dimen name="BigBtnSize">600dp</dimen>
+    <dimen name="BigBtnmargin">240dp</dimen>
+    <dimen name="bottomSize">100dp</dimen>
+    <dimen name="bottomMargin">40dp</dimen>
+
+    <dimen name="mainScenWidth">320dp</dimen>
+    <dimen name="mainScenHeight">180dp</dimen>
+     <dimen name="dialogWidth">420dp</dimen>
+    <dimen name="dialogHeight">250dp</dimen>
+    <dimen name="mainAddSize">90dp</dimen>
+    <dimen name="mainMarginLeft">0dp</dimen>
+
+    <dimen name="loginRight1">30dp</dimen>
+    <dimen name="loginRight2">27dp</dimen>
+    -->
+
+    <!---小屏设置-->
+    <dimen name="LayoutScale">0.8</dimen>
+
+    <dimen name="loginBtnHeight">65dp</dimen>
+    <dimen name="FrameMargin">11dp</dimen>
+    <dimen name="BigBtnSize">400dp</dimen>
+    <dimen name="BigBtnmargin">192dp</dimen>
+    <dimen name="bottomSize">80dp</dimen>
+    <dimen name="bottomMargin">32dp</dimen>
+
+    <dimen name="mainScenWidth">250dp</dimen>
+    <dimen name="mainScenHeight">140dp</dimen>
+    <dimen name="dialogWidth">380dp</dimen>
+    <dimen name="dialogHeight">220dp</dimen>
+    <dimen name="mainAddSize">70dp</dimen>
+    <dimen name="mainMarginLeft">30dp</dimen>
+
+    <dimen name="loginRight1">36dp</dimen>
+    <dimen name="loginRight2">20dp</dimen>
+
+
+</resources>

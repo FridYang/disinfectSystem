@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">disinfectsystem</string>
+    <string name="hello">你好</string>
+    <string name="register">注 册</string>
+    <string name="locallogin">离线登录</string>
+
+    <string name="chinese">中文</string>
+    <string name="english">英文</string>
+
+    <string name="bindsuccee">绑定成功</string>
+
+    <string name="scenerr">刷卡异常</string>
+    <string name="networkerr">网络异常</string>
+
+    <string name="bindcard">"绑定用户卡"</string>
+    <string name="changeoffpw">"更改密码"</string>
+    <string name="uploadlocal">"上传单机数据"</string>
+
+    <string name="roomsize">"消毒空间："</string>
+    <string name="concentration">"目标浓度："</string>
+    <string name="agent">"消毒剂："</string>
+
+    <string name="length">"长"</string>
+    <string name="width">"宽"</string>
+    <string name="height">"高"</string>
+    <string name="size">"体积"</string>
+
+    <string name="spraytime">"喷洒时间："</string>
+    <string name="enhancement">"增强时间："</string>
+    <string name="sterilizing">"消毒时间："</string>
+    <string name="evacuation">"撤离时间："</string>
+    <string name="appointment">"预约时间："</string>
+
+    <string name="registernfc">"注册NFC卡"</string>
+    <string name="setnewcard">"扫描新卡"</string>
+    <string name="scenlabel">"请扫描消毒液标签"</string>
+    <string name="registerstr">"补充完成 编号："</string>
+
+    <string name="reagentShow">"消毒液可正常使用"</string>
+    <string name="calibration">"校准空桶"</string>
+
+    <string name="gridno">"楼号："</string>
+    <string name="gridfloor">"楼层："</string>
+    <string name="gridsize">"科室名称："</string>
+
+    <string name="carmap">"选择地图"</string>
+    <string name="caragent">"选择消毒剂"</string>
+    <string name="carratio">"选择浓度"</string>
+    <string name="cartype">"运行类型"</string>
+
+    <string name="atwork">工作中</string>
+    <string name="movework">移动模式</string>
+    <string name="lowpower">消毒机电量过低</string>
+    <string name="carlowpower">底盘电量过低</string>
+
+    <string name="settingspw">"设置密码"</string>
+    <string name="settingsnewpw">"修改密码"</string>
+    <string name="tosettings">"跳转到设置"</string>
+
+    <string name="offpwinfo">密码必须为6位数字</string>
+    <string name="loginerr">登录信息错误</string>
+    <string name="offloginerr">离线密码错误</string>
+
+</resources>

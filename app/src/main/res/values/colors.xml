@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="uitvcolor">#ffffff</color>
+    <color name="uitvcolorB">#303066</color>
+
+    <color name="background">#2e2e63</color>
+
+    <color name="uitvless">#c80a0a</color>
+    <!--
+    <color name="black">#000</color>
+    <color name="uigreen">#20a53a</color>
+    <color name="uiicored">#ff0000</color>
+    -->
+</resources>

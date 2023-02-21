@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <!--消毒页面-->
+        <FrameLayout
+            android:id="@+id/end_layout_idle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:scaleX="@dimen/LayoutScale"
+            android:scaleY="@dimen/LayoutScale">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/full_idle" />
+
+            <TextView
+                android:id="@+id/end_tv_idle_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="68dp"
+                android:text="00 : 00 : 00"
+                android:textColor="#fff"
+                android:textSize="55dp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+        <!--结束页面-->
+        <FrameLayout
+            android:id="@+id/end_layout_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:scaleX="@dimen/LayoutScale"
+            android:scaleY="@dimen/LayoutScale">
+
+            <TextView
+                android:id="@+id/end_tv_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00s"
+                android:layout_margin="20dp"
+                android:textColor="#fff"
+                android:textSize="40dp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8">
+
+                    <ImageView
+                        android:id="@+id/end_img_finish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/btn_finish" />
+
+                    <ImageView
+                        android:id="@+id/end_img_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="200dp"
+                        android:src="@drawable/btn_ok" />
+
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="360dp"
+                    android:layout_height="360dp"
+                    android:src="@drawable/full_end" />
+
+            </LinearLayout>
+
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/end_img_exit"
+            android:layout_width="@dimen/bottomSize"
+            android:layout_height="@dimen/bottomSize"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/FrameMargin"
+            android:layout_marginBottom="@dimen/FrameMargin"
+            android:src="@drawable/ico_home" />
+    </FrameLayout>
+
+
+</LinearLayout>

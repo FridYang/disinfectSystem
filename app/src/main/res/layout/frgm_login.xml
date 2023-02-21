@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <!-- focus 获取焦点不让键盘弹出 -->
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:focusable="true"
+      android:focusableInTouchMode="true"
+      >
+
+
+      <FrameLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="left|top"
+          android:layout_marginLeft="@dimen/FrameMargin"
+          android:layout_marginTop="@dimen/FrameMargin">
+
+        <Spinner
+            android:id="@+id/login_sp_language"
+            android:layout_width="110dp"
+            android:layout_height="@dimen/loginBtnHeight"
+            android:layout_gravity="top|left"
+            android:background="@drawable/btn"
+            android:scaleX="@dimen/LayoutScale"
+            android:scaleY="@dimen/LayoutScale"/>
+
+        <TextView
+            android:id="@+id/login_tv_register"
+            android:layout_width="110dp"
+            android:layout_height="@dimen/loginBtnHeight"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="top|left"
+            android:text="@string/register"
+            android:gravity="center"
+            android:textSize="21dp"
+            android:textStyle="bold"
+            android:textColor="@color/uitvcolorB"
+            android:background="@drawable/btn"
+            android:scaleX="@dimen/LayoutScale"
+            android:scaleY="@dimen/LayoutScale"/>
+
+      <TextView
+          android:id="@+id/login_tv_local"
+          android:layout_width="110dp"
+          android:layout_height="@dimen/loginBtnHeight"
+          android:layout_marginTop="115dp"
+          android:layout_gravity="top|left"
+          android:text="@string/locallogin"
+          android:gravity="center"
+          android:textSize="20dp"
+          android:textStyle="bold"
+          android:textColor="@color/uitvcolorB"
+          android:background="@drawable/btn"
+          android:scaleX="@dimen/LayoutScale"
+          android:scaleY="@dimen/LayoutScale"/>
+
+      <TextView
+          android:id="@+id/login_tv_name"
+          android:layout_width="110dp"
+          android:layout_height="@dimen/loginBtnHeight"
+          android:layout_marginTop="170dp"
+          android:layout_gravity="top|left"
+          android:text="Name"
+          android:gravity="center"
+          android:textSize="20dp"
+          android:textStyle="bold"
+          android:textColor="@color/uitvcolorB"
+          android:background="@drawable/btn"
+          android:scaleX="@dimen/LayoutScale"
+          android:scaleY="@dimen/LayoutScale"/>
+
+  </FrameLayout>
+
+      <ImageView
+          android:id="@+id/login_img_shutdown"
+          android:layout_width="@dimen/bottomSize"
+          android:layout_height="@dimen/bottomSize"
+          android:layout_gravity="bottom"
+          android:layout_marginLeft="@dimen/FrameMargin"
+          android:layout_marginBottom="@dimen/FrameMargin"
+          android:src="@drawable/ico_settings"/>
+
+      <ImageView
+          android:id="@+id/login_img_restart"
+          android:layout_width="@dimen/bottomSize"
+          android:layout_height="@dimen/bottomSize"
+          android:layout_gravity="bottom"
+          android:layout_marginLeft="170dp"
+          android:layout_marginBottom="35dp"
+          android:visibility="gone"
+          android:src="@drawable/img_refresh"/>
+
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:layout_marginLeft="30dp"
+              android:orientation="vertical"
+              android:scaleX="0.9"
+              android:scaleY="0.9">
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:scaleX="@dimen/LayoutScale"
+          android:scaleY="@dimen/LayoutScale">
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginBottom="12dp"
+                  android:orientation="horizontal">
+
+                  <ImageView
+                      android:layout_width="90dp"
+                      android:layout_height="90dp"
+                      android:layout_marginRight="30dp"
+                      android:src="@drawable/ico_hospital"/>
+
+                  <FrameLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:background="@drawable/stroke_edit">
+
+                      <Spinner
+                          android:id="@+id/login_sp_info_hospital"
+                          android:layout_width="490dp"
+                          android:layout_height="90dp"
+                          android:textAlignment="center"
+                          />
+
+                      <ImageView
+                          android:layout_width="40dp"
+                          android:layout_height="40dp"
+                          android:layout_marginTop="30dp"
+                          android:layout_marginRight="10dp"
+                          android:layout_gravity="right"
+                          android:src="@drawable/ico_spin"/>
+
+                  </FrameLayout>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginBottom="12dp"
+                  android:orientation="horizontal">
+
+                  <ImageView
+                      android:layout_width="90dp"
+                      android:layout_height="90dp"
+                      android:layout_marginRight="30dp"
+                      android:src="@drawable/ico_department"/>
+
+                  <FrameLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:background="@drawable/stroke_edit">
+
+                      <Spinner
+                          android:id="@+id/login_sp_info_department"
+                          android:layout_width="490dp"
+                          android:layout_height="90dp"
+                          android:textAlignment="center"/>
+
+                      <ImageView
+                          android:layout_width="40dp"
+                          android:layout_height="40dp"
+                          android:layout_marginTop="30dp"
+                          android:layout_marginRight="10dp"
+                          android:layout_gravity="right"
+                          android:src="@drawable/ico_spin"/>
+
+                  </FrameLayout>
+
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginBottom="12dp"
+                  android:orientation="horizontal">
+
+                  <ImageView
+                      android:layout_width="90dp"
+                      android:layout_height="90dp"
+                      android:layout_marginRight="30dp"
+                      android:src="@drawable/ico_name"/>
+
+                  <FrameLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:background="@drawable/stroke_edit">
+
+                      <Spinner
+                          android:id="@+id/login_sp_info_name"
+                          android:layout_width="490dp"
+                          android:layout_height="90dp"
+                          android:textAlignment="center"/>
+
+                      <EditText
+                          android:id="@+id/login_edit_info_name"
+                          android:layout_width="340dp"
+                          android:layout_height="90dp"
+                          android:layout_marginLeft="47dp"
+                          android:textColor="@color/uitvcolor"
+                          android:textAlignment="center"
+                          android:textSize="27dp"
+                          android:background="#00000000"
+                          />
+
+                      <ImageView
+                          android:layout_width="40dp"
+                          android:layout_height="40dp"
+                          android:layout_marginTop="30dp"
+                          android:layout_marginRight="9dp"
+                          android:layout_gravity="right"
+                          android:src="@drawable/ico_spin"/>
+
+                  </FrameLayout>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginBottom="12dp"
+                  android:orientation="horizontal">
+
+                  <ImageView
+                      android:layout_width="90dp"
+                      android:layout_height="90dp"
+                      android:layout_marginRight="30dp"
+                      android:src="@drawable/ico_password"/>
+
+                  <FrameLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:background="@drawable/stroke_edit">
+
+                      <EditText
+                          android:id="@+id/login_edit_info_password"
+                          android:layout_width="420dp"
+                          android:layout_height="90dp"
+                          android:textColor="@color/uitvcolor"
+                          android:layout_marginLeft="7dp"
+                          android:layout_marginRight="63dp"
+                          android:textAlignment="center"
+                          android:inputType="numberPassword"
+                          android:textSize="27dp"
+                          android:background="#00FFFFFF"/>
+
+                  </FrameLayout>
+
+              </LinearLayout>
+
+              <TextView
+                  android:id="@+id/login_tv_confirm"
+                  android:layout_width="100dp"
+                  android:layout_height="40dp"
+                  android:layout_margin="30dp"
+                  android:layout_gravity="center"
+                  android:visibility="gone"
+                  android:text="登录"
+                  android:gravity="center"
+                  android:background="@drawable/stroke"/>
+
+      </LinearLayout>
+      </LinearLayout>
+
+      <FrameLayout
+          android:id="@+id/login_layout_update"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:visibility="gone">
+
+          <ImageView
+              android:layout_width="550dp"
+              android:layout_height="350dp"
+              android:layout_gravity="center"
+              android:src="@drawable/shapelowpower"/>
+
+          <TextView
+              android:id="@+id/login_tv_update"
+              android:layout_width="550dp"
+              android:layout_height="350dp"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:textColor="#000"
+              android:textSize="50dp"
+              android:textStyle="bold" />
+      </FrameLayout>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

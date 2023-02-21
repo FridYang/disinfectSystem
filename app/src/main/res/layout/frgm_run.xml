@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <!--运行页面-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/run_img_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/full_panda" />
+
+            <ImageView
+                android:id="@+id/run_img_state"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="top|center"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/btn_stop"
+                android:scaleX="@dimen/LayoutScale"
+                android:scaleY="@dimen/LayoutScale"/>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="@dimen/mainScenWidth">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/timeframe2"/>
+
+                <TextView
+                    android:id="@+id/run_tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="00 : 00 : 00"
+                    android:textColor="#fff"
+                    android:layout_marginBottom="6dp"
+                    android:textSize="47dp"
+                    android:textStyle="bold"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/run_tv_Sensor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="70dp"
+                android:text="1000"
+                android:textColor="#2f2f65"
+                android:textSize="60dp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/run_img_exit"
+            android:layout_width="@dimen/bottomSize"
+            android:layout_height="@dimen/bottomSize"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/FrameMargin"
+            android:layout_marginBottom="@dimen/FrameMargin"
+            android:src="@drawable/ico_home" />
+
+        <ImageView
+            android:id="@+id/run_img_testNow"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ico_wifi2" />
+
+        <ImageView
+            android:id="@+id/run_img_testNew"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ico_network2" />
+
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

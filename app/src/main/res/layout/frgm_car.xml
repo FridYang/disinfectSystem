@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleX="@dimen/LayoutScale"
+      android:scaleY="@dimen/LayoutScale">
+
+      <ImageView
+          android:id="@+id/car_img_exit"
+          android:layout_width="@dimen/bottomSize"
+          android:layout_height="@dimen/bottomSize"
+          android:layout_gravity="bottom"
+          android:layout_marginLeft="@dimen/FrameMargin"
+          android:layout_marginTop="@dimen/FrameMargin"
+          android:src="@drawable/ico_home"/>
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:orientation="horizontal"
+          android:visibility="visible">
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="12dp"
+                  android:gravity="center"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/carmap"
+                      android:textColor="@color/uitvcolor"
+                      android:textSize="35dp"
+                      android:textStyle="bold" />
+
+                  <FrameLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content">
+
+                      <Spinner
+                          android:id="@+id/car_sp_map"
+                          android:layout_width="520dp"
+                          android:layout_height="90dp"
+                          android:layout_marginLeft="60dp"
+                          android:layout_marginRight="30dp"
+                          android:background="@drawable/stroke_edit"
+                          android:textAlignment="center" />
+
+                      <ImageView
+                          android:layout_width="40dp"
+                          android:layout_height="40dp"
+                          android:layout_gravity="right"
+                          android:layout_marginRight="20dp"
+                          android:layout_marginTop="30dp"
+                          android:src="@drawable/ico_spin" />
+
+                  </FrameLayout>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginBottom="12dp"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/caragent"
+                      android:textSize="35dp"
+                      android:textStyle="bold"
+                      android:textColor="@color/uitvcolor"/>
+
+                  <FrameLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content">
+
+                      <Spinner
+                          android:id="@+id/car_sp_reagent"
+                          android:layout_width="520dp"
+                          android:layout_height="90dp"
+                          android:layout_marginLeft="60dp"
+                          android:layout_marginRight="30dp"
+                          android:textAlignment="center"
+                          android:background="@drawable/stroke_edit"/>
+
+                      <ImageView
+                          android:layout_width="40dp"
+                          android:layout_height="40dp"
+                          android:layout_marginTop="30dp"
+                          android:layout_marginRight="20dp"
+                          android:layout_gravity="right"
+                          android:src="@drawable/ico_spin"/>
+
+                  </FrameLayout>
+
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginBottom="12dp"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/carratio"
+                      android:textSize="35dp"
+                      android:textStyle="bold"
+                      android:textColor="@color/uitvcolor"/>
+
+                  <FrameLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content">
+
+                      <Spinner
+                          android:id="@+id/car_sp_ratio"
+                          android:layout_width="520dp"
+                          android:layout_height="90dp"
+                          android:layout_marginLeft="60dp"
+                          android:layout_marginRight="30dp"
+                          android:textAlignment="center"
+                          android:background="@drawable/stroke_edit"/>
+
+                      <ImageView
+                          android:layout_width="40dp"
+                          android:layout_height="40dp"
+                          android:layout_marginTop="30dp"
+                          android:layout_marginRight="20dp"
+                          android:layout_gravity="right"
+                          android:src="@drawable/ico_spin"/>
+
+                  </FrameLayout>
+
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginBottom="12dp"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/cartype"
+                      android:textSize="35dp"
+                      android:textStyle="bold"
+                      android:textColor="@color/uitvcolor"/>
+
+                  <FrameLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content">
+
+                      <Spinner
+                          android:id="@+id/car_sp_type"
+                          android:layout_width="520dp"
+                          android:layout_height="90dp"
+                          android:layout_marginLeft="60dp"
+                          android:layout_marginRight="30dp"
+                          android:textAlignment="center"
+                          android:background="@drawable/stroke_edit"/>
+
+                      <ImageView
+                          android:layout_width="40dp"
+                          android:layout_height="40dp"
+                          android:layout_marginTop="30dp"
+                          android:layout_marginRight="20dp"
+                          android:layout_gravity="right"
+                          android:src="@drawable/ico_spin"/>
+
+                  </FrameLayout>
+
+
+              </LinearLayout>
+
+          </LinearLayout>
+
+
+      </LinearLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout>

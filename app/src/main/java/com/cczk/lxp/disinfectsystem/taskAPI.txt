@@ -1,0 +1,868 @@
+# 安然机器人工作任务接口文档
+
+
+###### 说明
+```
+机器内部wifi 
+Name: machine2 (2为机器路由ID号)
+password:39185614
+
+10.168.2.1 路由
+password: anran2022
+
+安卓主板地址 10.168.2.158
+
+底盘rockpi地址
+
+访问URL：http://10.168.2.100:7071/admire/（接口方法类别）
+版本：v0.1
+日期：2022-09-25（by Sumt）
+
+
+```
+
+## 一、Socket状态消息推送
+
+* 机器人任务状态
+* websocket地址： ws://10.168.2.150:6062/
+
+```
+    消息内容：
+{
+  type :'taskState' (任务状态) / 'robotState' (机器运行状态)
+  taskState:{ 
+    //任务详情
+    create_time: "2022-09-19 13:10:15"  (创建时间)
+    enable: 1       (是否可用  1是  0否)
+    map_uuid: "1c90219d-e7e1-4a8c-9caa-34457b8cf009" (地图ID)
+    modified_time: "2022-09-19 13:10:15" (修改时间)
+    path_info: [        (任务路径点位数据集合)
+      {"x":0.9523,"y":-0.3798}, (点位坐标)
+      {
+        "x":2.0978,
+        "y":-0.4545,
+        "pointName":1,      (路径点序号)
+        "speed":"10",       (行进速度)
+        "process":{         (行进中工作)
+          "isWork":true,    (是否行进中工作)
+          "isUVlamp":true,  (是否打开紫外灯)
+          "isSpray":true    (是否喷雾)
+          },
+        "fixedPoint":{      (定点工作)
+          "isWork":true,    (是否定点工作)
+          "isUVlamp":true,  (是否打开紫外灯)
+          "UVlampTime":"9", (紫外线时长)
+          "isSpray":true,"  (是否喷雾)
+          SprayTime":"8"    (喷雾时长)
+        }
+      },
+      {"x":2.297,"y":0.828}
+      ]   
+    start_time: ""        (计划任务时间)
+    task_name: "任务3"    (任务名称)
+    task_type: 1          (任务分类)
+    task_uuid: "59a2e974-cf0f-4f39-b176-11937d9f100b"    (任务ID)
+    task_describe: "true" (是否在首页显示)
+
+    state: ""             (保留字段)
+    task_day: ""          (保留字段)
+    active: "active"      (保留字段)
+  }
+
+
+    taskWork: '定点工作-开启紫外线'  (任务状态提示文字)
+    nowPoint: {x:1.202,y:0.551}     (当前到达的点位坐标信息 )
+    nextPoint: {"x":2.297,"y":0.828} (正在前往的点位坐标信息)
+
+  }
+
+
+
+{
+	"type": "taskState",
+	"start_time": "",
+	"task_name": "任务3",
+	"task_type": 1,
+	"task_uuid": "59a2e974-cf0f-4f39-b176-11937d9f100b",
+	"task_describe": "true",
+
+	"state": "",
+	"task_day": "",
+	"active": "active",
+
+	"taskState": {
+		"create_time": "2022-09-19 13:10:15",
+		"enable": 1,
+		"map_uuid": "1c90219d-e7e1-4a8c-9caa-34457b8cf009",
+		"modified_time": "2022-09-19 13:10:15",
+		"path_info": [{
+				"x": 0.9523,
+				"y": -0.3798
+			},
+			{
+				"x": 2.297,
+				"y": 0.828
+			},
+			{
+				"x": 2.0978,
+				"y": -0.4545,
+				"pointName": 1,
+				"speed": "10",
+				"process": {
+					"isWork": true,
+					"isUVlamp": true,
+					"isSpray": true
+				},
+				"fixedPoint": {
+					"isWork": true,
+					"isUVlamp": true,
+					"UVlampTime": "9",
+					"isSpray": true,
+					"SprayTime": "8"
+				}
+			}]
+		}
+	}
+}
+
+{
+"type": "taskState",
+"start_time": "",
+"taskState": {
+"create_time": "2022-09-19 13:10:15",
+"enable": 1,
+"path_info": [{"x": 0.9,"y": 0.2},
+{"x": 2.297,"y": 0.828},
+{
+"x": 2.0978,
+"y": -0.4545,
+"pointName": 1,
+"speed": "10",
+"process": {
+"isWork": true,
+"isUVlamp": true,
+"isSpray": true
+},
+"fixedPoint": {
+"isWork": true,
+"isUVlamp": true,
+"UVlampTime": "9",
+"isSpray": true,
+"SprayTime": "8"
+}}]
+}
+}
+
+
+
+
+
+* 机器人状态通过websocket的形式以5Hz频率主动发送,也可以通过下面2.3接口主动查询
+* websocket地址： ws://192.168.3.100:7071/admire_ws/state
+  robotState:{ "robot_pose" : { 
+		"a" : 1.1901333289309555, 
+		"x" : 2.4946122922339251, 
+		"y" : 4.4971018938571659 
+    }, 
+  "robot_scan" : { 
+    "angle_increment" : 0.017493035644292831, 
+    "angle_max" : 3.1400001049041748, 
+    "angle_min" : -3.1400001049041748, 
+    "ranges" : [ 
+        12.712795257568359, 
+        13.259498596191406, 
+        13.864209175109863, 
+        14.356952667236328, 
+        13.068817138671875, 
+        11.995572090148926, 
+        11.085701942443848, 
+        10.308879852294923,
+        ....
+        ] 
+    }, 
+  "map_info": { 
+		"origin_x" : -17.031767272949221,
+		"origin_y" : -27.729617309570315,
+		"origin_a" : 0.0,
+		"resolution" : 0.05,
+		"height" : 637,
+		"width" : 572
+  },
+  "robot_state" : { 
+        "charger" : "idle", (具体状态变化信息说明，见[接口18.开始或结束对桩充电])
+        "lidar" : "work", 
+        "localization" : "succeed", 
+        "mapping" : "idle", 
+        "navigation" : "idle", 
+        "pump" : "off",                                  
+        "pushRod" : "off",                               
+        "roller" : "off",
+        "fan" : "off",
+		"mist" : "off",
+		"drug" : "off",
+        "highWaterWarn" : "off",
+        "lowWaterWarn" : "off",
+        "motor" : {
+            "enable": true,         (电机是否使能，【使能状态】下不能手动推动，【非使能状态】下不能遥控和导航)
+            "crash_count": 0,       (电机近期内通过力矩反馈检测的碰撞次数)
+        	"left_state": "正常"， （左驱动器状态，问题也在这个此字段返回，错误时需要用clearMotorError接口清除）
+        	"right_state": "正常"， (右驱动器状态，同上）
+			"left_tempreture": 25,  (左驱动器温度，单位°C)
+			"right_tempreture": 25, (右驱动器温度，单位°C)
+        }, 
+        "power" : {
+            "electricity": 10, (电流信息，单位 mA)
+            "voltage": 2660, (电压信息，单位 mV)
+            "percent": 100, (电池电量百分比 %)
+            "level": 5, (电池电量格数表示，分为5格,5格代表满电，1格代表低电量)
+            "tempreture": 25, (电池温度，单位 °C)
+            "state": 0, (电池充电状态， 0 - 放电状态， 1 - 充电状态， 2 - 静置状态)
+            "err_msg": [] (电池错误信息，JsonList， 比如有“充电过流”、“高温保护”等的中文错误信息，空代表没错误)
+           }
+        } 
+  },
+  "robot_navi_path": [
+	{
+		"x": xx.xx,
+		"y": xx.xx
+	},
+	{
+		"x": xx.xx,
+		"y": xx.xx
+	}
+	....
+  ], (robot_navi_path: 此字段数据只有机器人在自主规划路径后有数据，推送一次后则清空，直到下次有规划情况再插入新数据)
+
+  "robot_info": {
+  	"current_map": "xxxx-xxx-xxx-xxx-xx-xx-xxx", (若此时机器人定位成功，则返回目前正在使用的地图ID，若为空时则代表机器人未设置地图)
+	"current_task": "yyyyy-yyyy-yyy-yyyyy-yyyy" (若此时机器人正在执行任务，则返回目前正在执行任务的ID，若为空时则代表机器人不在执行任务)
+    "current_target": {
+        "x" : "",
+        "y" : "",
+        "a" : "",(若此时机器人正在执行点导航任务，则返回目前导航的目标点信息，若为空则代表机器人不在进行点导航任务)
+    }
+  },
+  "robot_velocity": {
+      "v" : xx.xx,
+      "w" : yy.yy (机器人当前的运动速度值，v为线速度,m/s; w为角速度,rad/s)
+  },
+  "security_msg: {
+      "dead_error" : false, (使用时间到期限制错误，false代表无错误)
+      "start_error" : false (开始时间限制错误，false代表无错误) 
+  }
+  "time_stamp": "2022-03-19 15:29:00" (发送此socket信息的时间戳)
+
+}
+
+```
+
+
+
+## 二、机器人控制类接口
+
+* 说明：此类接口都是对机器人进行控制和设置为主 
+
+#### 2.1 设置地图
+* 调用URL: [Post] http://ip:port/admire/setMap
+* 请求Body:
+```
+{
+	"map_uuid": "xxxxx-xxxx-xxx-xxxxx-xxxxxxx"
+	"sysnc": true or false
+}
+```
+* 参数说明:
+```
+map_uuid —— 选中地图的唯一ID
+sysnc —— 是否需要同步到导航和定位模块，如果定位成功时则不需要设置。只需发布一次map话题给前段订阅即可。
+         [注意！]如果平时导航定位都是正常状态则置成false，这样不需要每次都复位一次导航和定位的地图,因为复位所有导航数据资源消耗较大，并且会将定位和导航数据都会清除。
+
+选中地图之后，会通过/map话题（ros topic）将此地图数据发布出来，前端可以通过订阅该信息获取
+```
+* 返回值:
+```
+{
+	"code": 200,
+	"err_msg": ""
+}
+```
+
+#### 2.2 启动或暂停导航
+* 调用URL: [Post] http://ip:port/admire/setNavi
+* 请求Body:
+```
+{
+	"action": "动作类型",
+	"task_uuid": "xxxxx-xxxxx-xxxx-xxxxx-xxxxxx"
+}
+```
+* 参数说明:
+```
+action —— 需要设置导航动作，字符串的形式从下四选一：
+          "start": 开始马上执行一个任务，此时"task_uuid"字段填入具体任务ID信息，机器人会查表获取任务信息来开始执行
+		  "stop": 结束正在执行的任务，机器人恢复空闲状态。再执行需要重新开始。
+		  "pause": 暂停机器人正在执行的任务，可恢复。但暂停后不允许遥控机器人到其它位置，属于短暂停一下。
+		  "resume": 恢复执行，只有在调用暂停动作后才会恢复。
+task_uuid —— 需要执行的任务ID。【注意：只有在动作是"start"时，才需填入任务ID，其它三个动作时可填空字符串】
+```
+* 返回值:
+```
+{
+	"code": 200,
+	"err_msg": ""
+}
+```
+
+#### 2.3 状态查询
+* 调用URL: [Post] http://ip:port/admire/showState
+* 请求Body:
+```
+{
+	"state": [
+      ---- 基础底盘模块 ----
+		"power"(电池电量),
+		"localzation" (定位模块),
+		"mapping" (构图模块),
+		"navigation" (导航模块),
+		"motor" (驱动器模块),
+		"lidar" (激光传感器模块),
+		"charger" (自动对桩模块),
+		"mark_state" (前端下发的记录状态),
+    
+      ---- 清洁机器人模块 ----
+        "pump"(水泵电机), 
+        "roller"(滚刷电机),
+        "fan"(风机),
+        "pushRod"(吸趴推杆),
+        "highWaterWarn"(高水位警报),
+        "lowWaterWarn"(低水位警报),
+
+      ---- 消杀机器人模块 ----
+        "mist"(喷雾器), 
+
+		]
+}
+```
+* 参数说明:
+```
+{
+state —— 是指需要查询的模块，类型是JsonArray， 当为空时代表查询所有模块状态。如果填上述某一块则只查一种。
+}
+```
+* 返回值:
+```
+{
+	"code": 200,
+	"err_msg": "",
+	"datas": {
+        "charger": "reach"(电极接触) / "work"(正在对准) / "loss"(搜索不到充电桩) /
+                   "idle"(空闲中) / "leave"(正在离开充电桩) / "unconfig" (未配置充电桩位置)
+		"power": Json数据 （正常数据信息,具体看下方数据位）/ "error" (通信异常，无法获取信息)
+		"motor": Json数据 （正常数据信息,具体看下方数据位） / "error" (通信异常，无法获取信息)
+        "mapping": "work"(构图中) / "idle"(非构图中) 
+		"localization": "succeed"(定位成功) / "unconfig" (未定位) / "error"（定位异常）
+		"navigation": "work"(执行任务中) / "idle"(空闲中) / "unconfig" (等待中) / "pause" (任务暂停中) / 
+                      "stop" or "occupy" or "stuck"(停障中: stop 是障碍物靠得太近，occupy是目标点被占用，stuck是路径太窄无法规划)
+		"lidar": "work"(激光正常) / "error" (激光异常)
+
+      ---- 清洁机器人模块 ----
+        "pump": "on" (打开) / "off"(关闭) / "error"(异常)
+        "roller": "on" (打开) / "off"(关闭) / "error"(异常)
+        "fan": "on" (打开) / "off"(关闭) / "error"(异常)
+        "pushRod": "on" (打开) / "off"(关闭) / "error"(异常)
+        "highWaterWarn": "on" (出现高水位警报) / "off"(没有高水位警报) / "error"(异常)
+        "lowWaterWarn": "on" (出现低水位警报) / "off"(没有低水位警报) / "error"(异常)
+
+      ---- 消杀机器人模块 ----
+        "mist": "on" (打开) / "off"(关闭) / "error"(异常)
+
+		...【以后有会继续补充，此列别与查询请求内容匹配，查啥返回啥，查空全返回】
+	}
+}
+```
+
+
+#### 2.4 开始扫图
+* 调用URL: [Post] http://ip:port/admire/scanMap
+* 请求Body:
+```
+{
+	"action": "start" (or "stop", or "cancel"),
+	"map_name": "xxx"
+}
+```
+* 参数说明:
+```
+{
+action —— start 、 stop 或 cancel 三选一，开始、结束以及取消。 （取消会默认保存后删除）  
+map_name ——  当action为start的时候，需要通过此字段给出此次扫图的名称, 若action为stop或cancel时，此次字段可填空。
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 2.5 设置点位（初始化位置/导航目标点） 
+* 调用URL: [Post] http://ip:port/admire/setPose
+* 请求Body:
+```
+{
+	"type": ("localization" or "navigation" 二选一),
+	"pose": {
+		"x": x.xx,  (x轴坐标值，米)
+		"y": x.xx,  (y轴坐标值，米)
+		"a": x.xx   (角度值，弧度)
+	}
+}
+```
+* 参数说明:
+```
+{
+type ——  "localization": 设置定位模块的初始化位置
+         "navigation": 设置导航模块的目标点位置
+        
+pose ——   JsonObjectValue ,  设置的具体坐标数据
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 2.6 更新虚拟墙或通行区信息 
+* 调用URL: [Post] http://ip:port/admire/updateMap
+* 请求Body:
+```
+{
+	"map_uuid": "xxxxx-xxxxxx-xxxxx-xxxxx-xxxxxx"
+}
+```
+* 参数说明:
+```
+{
+	map_uuid —— 更新地图的ID号,某地图的【虚拟墙或通行区】信息被修改、删除 或者增加【操作成功之后】下发,失败不需要
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 2.7 新增地图 
+* 调用URL: [Post] http://ip:port/admire/addMap
+* 请求Body:
+```
+{
+	"map_yaml_file_path": "/home/et/xxxx.yaml",
+	"map_name": "sec_map"
+}
+```
+* 参数说明:
+```
+{
+	map_yaml_file_path —— 要添加的地图yaml文件路径，【注意】需要有对应的pgm文件
+                          (11-19日新增，若是构图过程中保存地图，则此处为空，代表默认将当前构得的地图保存添加)
+	map_name —— 添加地图的名称
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 2.8 开始或结束对桩充电 
+* 调用URL: [Post] http://ip:port/admire/startCharge
+* 说明: 当机器人已经到达（2.10）接口获取的充电桩预备位后，再通过此接口开始自动对桩充电 
+* 请求Body:
+```
+{
+    "start" : true
+}
+```
+* 参数说明:
+```
+{
+    start —— (类型：bool) 是否开始自动充电。
+          · true —— 为机器人开始搜索充电桩位置，并进行自动对桩和充电，这里需要注意的是，机器人已经到达充电桩预备位后，才能开始搜索和对桩，否则搜索不到。
+          · false —— 机器人结束充电状态，如果机器人此时正在桩上充电中，收到false会自动后退一点离开桩。若机器人不在桩上充电则直接结束当前动作（如正在对桩或正在离开等）。 【若电池已充满到100%电量，也可以通过此接口通知机器人停止充电，避免长期过充】
+    
+    补充说明充电桩状态字段说明（socket机器人状态信息中的charger字段）：
+        地图未设置充电桩时，状态为unconfig；
+        已经接收到设置的充电桩信息，状态为idle；
+        收到开始充电的信息，状态变为work，代表正在搜索和对接，如果对接成功开始充电，状态变为reach；
+        如果搜索一分钟都没有找到充电桩时，状态变为loss；
+        收到结束充电的指令且需要离开桩时，状态变为leave，代表正在离开桩，离开完成后变为idle；
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 2.9 获取充电桩附近的功能位置 
+* 调用URL: [Post] http://ip:port/admire/getChargerAssistPose
+* 说明: 获取充电桩附近的功能位置,可以获取充电桩预备位或充电桩定位两种位置
+* 请求Body:
+```
+{
+	"pose_type": "ready_pose" or "locate_pose"
+}
+```
+* 参数说明:
+```
+{
+	"pose_type": —— (string) 获取的位置类型：
+		ready_pose : 充电桩预备位，用于自动回充时的点导航目标信息，切记不是直接用地图中充电桩坐标作为回充目标点，而是先回到此接口返回的预备位处！若此地图没有设置充电桩，则无法获取。	
+		locate_pose : 通过充电桩定位时使用的位置信息，用于当机器人已经在充电桩充电时的快速定位位置,需配合设置初始位置接口使用。
+
+	【注意】： 这两种位置的获取前提都是正在使用的地图上，已经正确设置好充电桩信息，否则无法获取。 另外，若充电桩的位置被修改后，请通过此接口再获取一次预备位信息.
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {
+        "a": -1.3425225535568439,
+        "x": -1.6338781325690628,
+        "y": -4.3104212119853349
+    },
+    "err_msg": ""
+```
+
+#### 2.10 新增或调整充电桩位置 
+* 调用URL: [Post] http://ip:port/admire/updateChargerPose
+* 请求Body:
+```
+{
+	"charger_pose": {
+	    "x": xxxx,
+        "y": yyyy,
+        "a": aaaa
+	}
+}
+```
+* 参数说明:
+```
+{
+    新增加或者调整后的充电桩在地图上的位姿信息，x 和 y是坐标值，a是角度值。
+    在设置或更新到map_points_table的同时，需要同时通过这个接口更新一次，以便位置马上生效。
+
+    若 x，y 或 a任一为null值时，代表此地图的充电桩位置被删除
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 2.11 清除驱动器错误 
+* 调用URL: [Post] http://ip:port/admire/clearMotorError
+* 请求Body:
+```
+{
+}
+```
+* 参数说明:
+```
+{
+	暂时不需要参数
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 2.12 是否使能驱动器 
+* 调用URL: [Post] http://ip:port/admire/enableMotor
+* 请求Body:
+```
+{
+    "enable": true
+}
+```
+* 参数说明:
+```
+{
+    enable —— (类型：bool) 是否使能驱动器，true为使能， false为断使能。	
+                           需要手动推动机器人时需要先对驱动器先断使能，此时只能手推无法进行导航或遥控。正常导航功能前需要先把驱动器使能。【注意】驱动器没有机械驻车功能，斜坡等情况下请勿随便断使能，否则容易出现溜坡情况，仅用于特殊情况下推动。
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 2.13 获取或调节导航最大线速度 
+* 调用URL: [Post] http://ip:port/admire/ctrlNaviSpeed
+* 请求Body:
+```
+{
+	"action": "get" or "set",
+	"speed": 0.4 
+}
+```
+* 参数说明:
+```
+{
+	action —— (类型: string) 设置速度("set")或者获取当前导航最大速度("get"),
+	speed —— (类型: double) 设置的最大导航速度（单位：米/秒, 允许范围: 0.1 ~ 1.0, 默认0.4m/s）， 如果是获取速度则不需要设置此参数，仅用于设置
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {
+    	"speed": 0.4 (此次查询或设置的数值)
+    },
+    "err_msg": ""
+```
+
+#### 2.14 导航寻找相对较近的位置停车
+* 调用URL: [Post] http://ip:port/admire/closerNaviGoal
+* 请求Body:
+```
+{
+}
+```
+* 参数说明:
+```
+{
+    暂时不需要参数
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "err_msg": ""
+```
+
+## 三、系统配置和查询类
+
+* 说明: 此类接口主要用于系统配置类，一般不与机器人控制和动作相关。
+
+#### 3.1 获取图片文件 
+* 调用URL: [Post] http://ip:port/admire/getMapImg
+* 请求Body:
+```
+{
+	"type": "maps" (or "reports" or "realtime_map"),
+	"uuid": "xxxx-xxxx-xxxxx-xxxxxx"
+}
+```
+* 参数说明:
+```
+{
+type —— 需要查询的图片数据，如果是获取地图文件，则选择“maps”， 下面uuid填地图的map_uuid。 如果是要获取清洁任务报告的路线结果，则选择"reports",下面uuid 填清洁报告的report_uuid.
+		新增"realtime_map" 类型，用于获取构图过程中实时生成的地图文件，此情况下 uuid字段为空，不需要输入具体的地图ID
+
+uuid —— 根据查询内容，填写对应的UUID， 查地图则填地图UUID，查清洁报告则填报告UUID 
+}
+```
+* 返回值:
+```
+图片的二进制流
+```
+
+#### 3.2 获取各个模块的日志文件压缩包 
+* 调用URL: [Post] http://ip:port/admire/getDailyLogInfo
+* 说明: 将日志文件导出到U盘设备,可指定保存的日志天数
+* 请求Body:
+```
+{
+    "day": 1 ~ 14 
+}
+```
+* 参数说明:
+```
+{
+    "day" —— (类型：int) 导出的日志天数, 最大导出过往14天内的日志文件
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {
+        "log_name": "xxxxxx.log.tar.gz" (生成的日志文件名称；机器人ID号 + 日期) 
+    },
+    "err_msg": ""
+```
+
+#### 3.3 设置记录状态 
+* 调用URL: [Post] http://ip:port/admire/setMarkInfo
+* 说明: 用于前端逻辑应用时，需要在机器人端记录的信息（避免前端无法状态同步或丢失）
+* 请求Body:
+```
+{
+    "mark_state": state_string
+}
+```
+* 参数说明:
+```
+{
+    mark_state —— (类型：string) 需要机器人端记录的信息字符串，设置后在状态socket中的robot_state字段的mark_state中返回，并在导航空闲或异常时5分钟后被自动重置为空
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 3.4 获取或调节系统语音播报音量 
+* 调用URL: [Post] http://ip:port/admire/ctrlSystemVolumn
+* 请求Body:
+```
+{
+	"action": "get" or "set",
+	"volumn": 60
+}
+```
+* 参数说明:
+```
+{
+	action —— (类型: string) 设置音量("set")或者获取当前系统音量("get"),
+	volumn —— (类型: int) 设置的音量百分比（0 ~ 100%）， 如果是获取音量则不需要设置此参数，仅用于设置
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {
+    	"volumn": 60 (此次查询或设置的数值)
+    },
+    "err_msg": ""
+```
+
+#### 3.5 系统关机或重启 
+* 调用URL: [Post] http://ip:port/admire/ctrlSystemPower
+* 请求Body:
+```
+{
+	"action" : "reboot" or "poweroff",
+}
+```
+* 参数说明:
+```
+{
+	action —— (string) reboot : 重启系统
+	                   poweroff : 关机
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 3.6 配置本地参数文件
+* 调用URL: [Post] http://ip:port/admire/configLocalParams
+* 请求Body:
+```
+{
+	"action" : "get" or "set" or "reset",
+	"type" : "",
+    "data" : ""
+}
+```
+* 参数说明:
+```
+{
+	action —— (string) 对参数的操作方法，下面三者之一
+                       "get" : 获取参数
+                       "set" : 设置参数
+                       "reset" : 恢复所有默认参数
+
+    type —— (string) 操作的参数目标名称，若为空时获取则返回全部内容
+    data —— (参数值，需要和原有参数类型一致)
+
+====================================================
+目前本地存储参数配置内容：
+     "motor_over_ele" : {   —— 通过驱动器电流判断机器人发生碰撞的电流值   
+        "dynamic" : 5,    —— 动态情况下的电流值，单位 A (安)
+        "static" : 2      —— 静态情况下的电流值，单位 A (安)
+     },
+     "speed" : 0.4,       —— 机器人运动速度，单位 m/s (米每秒)
+     "wait_sec" : 1       —— 机器人检测到障碍物后停止等待时间，单位 s（秒）
+ 
+
+接口使用例子：
+
+1. 发送以下命令查询所有参数内容： 
+    action : "get",
+    type : "", (类型为空时查询所有内容，也可以写具体的参数名称来查询单一值)
+    data : "",
+
+   返回内容
+     "motor_over_ele" : {    
+        "dynamic" : 5,
+        "static" : 2
+     },
+     "speed" : 0.4,
+     "wait_sec" : 1
+
+2. 发送以下命令修改wait_sec参数值为 2.0：
+    action : "set",
+    type : "wait_sec",
+    data : 2.0 (注意，data值需要设置相同类型，比如查询得知此位为浮点数，则只能设置浮点类型，若修改motor_over_ele这种 Json::objectValue类型的话，需要设置object类型)
+
+3. 发送以下命令修改电机超调电流数值:
+    action : "set",
+    type : "motor_over_ele",
+    data : {
+        dynamic: 10.0,
+        static: 4.0
+    }
+
+4. 将所有参数恢复回默认值（修改错误情况下也可以恢复）：
+    action : "reset",
+    type : "",
+    data : ""
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "datas": {},
+    "err_msg": ""
+```
+
+#### 3.7 获取机器人ID号 
+* 调用URL: [Post] http://ip:port/admire/getRobotID
+* 请求Body:
+```
+{
+}
+```
+* 参数说明:
+```
+{
+}
+```
+* 返回值:
+```
+    "code": 200,
+    "data": {
+    	"id": xxxxxxxxxxxxxxxxxxxx 
+    } 
+    "err_msg": ""
+```

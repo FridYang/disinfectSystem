@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <!--选择页面-->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/btn_start1"/>
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="150dp"
+                android:src="@drawable/btn_start2"/>
+
+        </FrameLayout>
+
+        <!--实际点击-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_marginLeft="170dp"
+            android:layout_marginBottom="50dp">
+
+            <ImageView
+                android:id="@+id/switch_img_nowstart"
+                android:layout_width="350dp"
+                android:layout_height="380dp"
+                android:layout_gravity="center_vertical"
+                android:rotation="10"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="10dp"
+                android:background="#00000000"/>
+
+            <ImageView
+                android:id="@+id/switch_img_phonestart"
+                android:layout_width="350dp"
+                android:layout_height="380dp"
+                android:layout_gravity="center_vertical"
+                android:rotation="10"
+                android:layout_marginLeft="500dp"
+                android:layout_marginTop="50dp"
+                android:background="#00000000"/>
+
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/switch_img_exit"
+            android:layout_width="@dimen/bottomSize"
+            android:layout_height="@dimen/bottomSize"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/FrameMargin"
+            android:layout_marginBottom="@dimen/FrameMargin"
+            android:src="@drawable/ico_home" />
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    >
+
+        <FrameLayout
+            android:id="@+id/main_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/main_layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/main_img_heat"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/ico_heat1"/>
+
+        <ImageView
+            android:id="@+id/main_img_network"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/ico_network2"/>
+
+        <ImageView
+            android:id="@+id/main_img_wifi"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/ico_wifi2"/>
+
+        <TextView
+            android:id="@+id/main_tv_battery2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="-15dp"
+            android:layout_marginRight="2dp"
+            android:text="100"
+            android:textColor="#fff"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:paddingRight="5dp">
+
+            <ImageView
+                android:id="@+id/main_img_battery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/battery"/>
+
+            <TextView
+                android:id="@+id/main_tv_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="1dp"
+                android:text="100"
+                android:textColor="#fff"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+    <com.cczk.lxp.disinfectsystem.utils.ui.ShowTextView
+        android:id="@+id/main_title_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/FrameMargin"
+        android:paddingBottom="@dimen/FrameMargin"
+        android:text="00:00"
+        android:textSize="30dp"
+        android:textColor="@color/uitvcolor"
+        android:layout_gravity="right|bottom"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/main_tv_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text=""
+        android:textColor="#ff3d3d"
+        android:textSize="45dp"
+        android:textStyle="bold" />
+
+
+    <FrameLayout
+        android:id="@+id/main_layout_tips"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="550dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:src="@drawable/shapelowpower"/>
+
+        <TextView
+            android:id="@+id/main_tv_tips"
+            android:layout_width="550dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="电量不足"
+            android:textColor="#000"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+
+</FrameLayout>

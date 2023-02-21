@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:paddingTop="45dp"
+            android:paddingBottom="105dp"
+            android:background="@color/background">
+
+            <!-- 顶部选择 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/gridno"
+                    android:textColor="@color/uitvcolor"
+                    android:textSize="29dp" />
+
+                <Spinner
+                    android:id="@+id/grid_spin_no"
+                    android:layout_width="190dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/stroke_edit"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gridfloor"
+                    android:textColor="@color/uitvcolor"
+                    android:textSize="29dp" />
+
+                <Spinner
+                    android:id="@+id/grid_spin_floor"
+                    android:layout_width="190dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/stroke_edit"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/gridsize"
+                    android:textColor="@color/uitvcolor"
+                    android:textSize="29dp" />
+
+                <EditText
+                    android:id="@+id/grid_edit_size"
+                    android:layout_width="190dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="28dp"
+                    android:textColor="@color/uitvcolor"
+                    android:theme="@style/MyEditText"
+                    android:enabled="false"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <!-- 房间选择 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:layout_marginTop="75dp"
+                android:gravity="center">
+
+                <ScrollView
+                    android:id="@+id/grid_layout_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background"
+                    android:layout_margin="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <GridLayout
+                        android:id="@+id/grid_layout_context"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:columnCount="1">
+
+                        <LinearLayout
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_margin="15dp"
+                            android:background="@drawable/stroke_select"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/grid_num" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:autoSizeTextType="uniform"
+                                    android:gravity="center"
+                                    android:text="1"
+                                    android:textColor="@color/uitvcolor"
+                                    android:textStyle="bold" />
+
+                            </FrameLayout>
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:src="@drawable/grid_btnoff" />
+
+                        </LinearLayout>
+
+
+                    </GridLayout>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/FrameMargin"
+            android:layout_marginBottom="@dimen/FrameMargin"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/grid_img_exit"
+                android:layout_width="@dimen/bottomSize"
+                android:layout_height="@dimen/bottomSize"
+                android:src="@drawable/ico_home"/>
+
+            <ImageView
+                android:id="@+id/grid_img_reagent"
+                android:layout_width="@dimen/bottomSize"
+                android:layout_height="@dimen/bottomSize"
+                android:src="@drawable/ico_reagent"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout>

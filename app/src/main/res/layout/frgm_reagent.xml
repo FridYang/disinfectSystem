@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="bottom"
+            android:scaleX="@dimen/LayoutScale"
+            android:scaleY="@dimen/LayoutScale">
+
+        <ImageView
+            android:id="@+id/reagent_img_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:src="@drawable/text004"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/FrameMargin"
+            android:layout_marginBottom="@dimen/FrameMargin"
+            android:orientation="horizontal"
+            android:scaleX="@dimen/LayoutScale"
+            android:scaleY="@dimen/LayoutScale">
+
+            <ImageView
+                android:id="@+id/reagent_img_exit"
+                android:layout_width="@dimen/bottomSize"
+                android:layout_height="@dimen/bottomSize"
+                android:src="@drawable/ico_home"/>
+
+            <ImageView
+                android:id="@+id/reagent_img_open"
+                android:layout_width="@dimen/bottomSize"
+                android:layout_height="@dimen/bottomSize"
+                android:src="@drawable/ico_open"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="@dimen/bottomMargin"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:scaleX="0.8"
+            android:scaleY="0.8">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:scaleX="@dimen/LayoutScale"
+                android:scaleY="@dimen/LayoutScale">
+
+                <FrameLayout
+                    android:id="@+id/reagent_frame1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="230dp"
+                        android:layout_height="260dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/img_reagent" />
+
+                    <ImageView
+                        android:id="@+id/reagent_img_scan1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="260dp"
+                        android:src="@drawable/img_refresh" />
+
+                    <com.cczk.lxp.disinfectsystem.view.utils.WaterView
+                        android:id="@+id/reagent_water_reagent1"
+                        android:layout_width="140dp"
+                        android:layout_height="175dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="60dp" />
+
+                    <TextView
+                        android:id="@+id/reagent_tv_reagent1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="120dp"
+                        android:text="100%"
+                        android:textColor="#fff"
+                        android:textSize="37dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/reagent_tv_calib1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/stroke"
+                        android:padding="20dp"
+                        android:text="@string/calibration"
+                        android:textColor="@color/uitvcolor"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/reagent_frame2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="230dp"
+                        android:layout_height="260dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/img_reagent" />
+
+                    <ImageView
+                        android:id="@+id/reagent_img_scan2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="260dp"
+                        android:src="@drawable/img_refresh" />
+
+                    <com.cczk.lxp.disinfectsystem.view.utils.WaterView
+                        android:id="@+id/reagent_water_reagent2"
+                        android:layout_width="140dp"
+                        android:layout_height="175dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="60dp" />
+
+                    <TextView
+                        android:id="@+id/reagent_tv_reagent2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="120dp"
+                        android:text="100%"
+                        android:textColor="#fff"
+                        android:textSize="37dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/reagent_tv_calib2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/stroke"
+                        android:padding="20dp"
+                        android:text="@string/calibration"
+                        android:textColor="@color/uitvcolor"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/reagent_tv_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/reagentShow"
+                android:textColor="#fff"
+                android:textSize="42dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:scaleX="@dimen/LayoutScale"
+                android:scaleY="@dimen/LayoutScale"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/reagent_tv_postnfc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/FrameMargin"
+            android:layout_marginTop="@dimen/FrameMargin"
+            android:padding="8dp"
+            android:textColor="@color/uitvcolor"
+            android:background="@drawable/stroke"
+            android:textAlignment="center"
+            android:text="@string/registernfc"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:visibility="visible"/>
+
+    </FrameLayout>
+
+</LinearLayout>
