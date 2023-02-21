@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by pc on 2018/2/7.
+ *
  */
 public class BindCardFrgm extends Fragment implements IFrgmCallBack {
     private static final String TAG = "BindCardFrgm";
