@@ -197,7 +197,12 @@ public class BindCardFrgm extends Fragment implements IFrgmCallBack {
     }
 
     @Override
-    public void onTouchBack(int flag) {}
+    public void onTouchBack(int flag) {
+
+
+
+
+    }
 
 //    public void ThreadOneSecFun() {
 //        //更新UI时间
